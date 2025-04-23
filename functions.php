@@ -24,7 +24,8 @@ if ( file_exists( $child_block_extensions ) ) {
  */
 function setup() {
     // Add custom image size for index page.
-    add_image_size('featured-vertical', 350, 525, true);
+    add_image_size('featured-large', 485, 725, true);
+    add_image_size('featured-vertical', 388, 525, true);
 }
 add_action( 'after_setup_theme', 'setup' );
 
@@ -33,6 +34,10 @@ add_action( 'after_setup_theme', 'setup' );
  */
 function add_image_size_to_blocks() {
     add_filter('block_editor_settings_all', function($settings) {
+        $settings['imageSizes'][] = [
+            'slug' => 'featured-large',
+            'name' => __('Featured Large', 'moiraine')
+        ];
         $settings['imageSizes'][] = [
             'slug' => 'featured-vertical',
             'name' => __('Featured Vertical', 'moiraine')
