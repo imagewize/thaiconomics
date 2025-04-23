@@ -24,28 +24,37 @@ if ( file_exists( $child_block_extensions ) ) {
  */
 function setup() {
     // Add custom image size for index page.
-    add_image_size('featured-large', 485, 725, true);
+    add_image_size('featured-landscape', 740, 500, true);
+    add_image_size('featured-large', 485, 650, true);
     add_image_size('featured-vertical', 388, 525, true);
 }
 add_action( 'after_setup_theme', 'setup' );
 
 /**
- * Add image size to block editor
+ * Add custom image sizes to the block editor
+ * This makes our custom image sizes available in the block editor's image size dropdown
  */
-function add_image_size_to_blocks() {
+function add_image_sizes_to_block_editor() {
     add_filter('block_editor_settings_all', function($settings) {
-        $settings['imageSizes'][] = [
-            'slug' => 'featured-large',
-            'name' => __('Featured Large', 'moiraine')
+        // Define all custom sizes with their display names
+        $custom_sizes = [
+            'featured-landscape' => __('Featured Landscape', 'moiraine'),
+            'featured-large' => __('Featured Large', 'moiraine'),
+            'featured-vertical' => __('Featured Vertical', 'moiraine')
         ];
-        $settings['imageSizes'][] = [
-            'slug' => 'featured-vertical',
-            'name' => __('Featured Vertical', 'moiraine')
-        ];
+        
+        // Add each custom size to the editor settings
+        foreach ($custom_sizes as $slug => $name) {
+            $settings['imageSizes'][] = [
+                'slug' => $slug,
+                'name' => $name
+            ];
+        }
+        
         return $settings;
     });
 }
-add_action('init', 'add_image_size_to_blocks');
+add_action('init', 'add_image_sizes_to_block_editor');
 
 /**
  * Enqueue custom block editor assets
