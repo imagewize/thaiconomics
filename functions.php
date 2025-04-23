@@ -25,13 +25,6 @@ if ( file_exists( $child_block_extensions ) ) {
 function setup() {
     // Add custom image size for index page.
     add_image_size('featured-vertical', 350, 525, true);
-
-    // Add the size to WordPress size dropdown
-    add_filter('image_size_names_choose', function($sizes) {
-        return array_merge($sizes, [
-            'featured-vertical' => __('Featured Vertical', 'moiraine')
-        ]);
-    });
 }
 add_action( 'after_setup_theme', 'setup' );
 

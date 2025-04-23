@@ -17,3 +17,10 @@ Text Domain:  thaiconomics
     height: 525px !important;
     object-fit: cover;
 }
+
+/* Fix for home top query loop post featured images */
+.wp-block-query .wp-block-post-featured-image img {
+    width: 388px !important;
+    height: 525px !important;
+    object-fit: cover;
+}
