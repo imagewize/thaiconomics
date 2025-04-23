@@ -1,0 +1,19 @@
+/*
+Theme Name:   Thaiconomics
+Theme URI:    https://imagewize.com/moiraine
+Description:  A child theme for Moiraine.
+Author:       Imagewize
+Author URI:   https://imagewize.com
+Template:     moiraine
+Version:      1.1.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Tags:         Tags: blog, portfolio, entertainment
+Text Domain:  thaiconomics
+*/
+
+.featured-post-query .wp-block-post-featured-image img {
+    max-width: 350px !important;
+    height: 525px !important;
+    object-fit: cover;
+}
