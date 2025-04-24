@@ -24,7 +24,7 @@ if ( file_exists( $child_block_extensions ) ) {
  */
 function setup() {
     // Add custom image size for index page.
-    add_image_size('featured-landscape', 740, 500, true);
+    add_image_size('featured-landscape', 740, 400, true);
     add_image_size('featured-large', 485, 650, true);
     add_image_size('featured-vertical', 388, 525, true);
 }
