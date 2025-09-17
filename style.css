@@ -11,3 +11,18 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 Tags:         Tags: blog, portfolio, entertainment
 Text Domain:  thaiconomics
 */
+
+/* Responsive grid overrides */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .tc-post-grid .wp-block-post-template.is-layout-grid,
+  .tc-post-grid [class*="wp-container-core-post-template-is-layout"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .tc-post-grid .wp-block-post-template.is-layout-grid,
+  .tc-post-grid [class*="wp-container-core-post-template-is-layout"] {
+    grid-template-columns: 1fr;
+  }
+}
